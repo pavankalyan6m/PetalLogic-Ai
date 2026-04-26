@@ -1,366 +1,316 @@
 # 🌸 PetalLogic AI
-## 🧠 AI-Powered DSA Learning & Visualization Platform
 
-PetalLogic AI is a next-generation learning system that helps users **understand Data Structures & Algorithms through AI-generated explanations, interactive chat, and flowchart-based visualization**.
+## 🧠 Production-Grade AI-Powered DSA Learning & Visualization Platform
 
-Instead of memorizing algorithms, users can:
-- 💬 Ask AI doubts in natural language
-- 📊 Visualize step-by-step execution using flowcharts
-- 🧠 Learn through structured AI explanations
-- 📈 Track learning progress dynamically
+👨‍💻 Pavan Kalyan  
+👩‍💻 Kruthika  
+🤝 Co-Built Full Stack AI System (Microservices + LLM + Visualization)
 
 ---
 
-# 🚀 Why PetalLogic AI?
+# 🚀 Overview
 
-Traditional learning is:
-❌ Static  
-❌ Hard to visualize  
-❌ Memorization-heavy  
+**PetalLogic AI** is a production-grade intelligent learning platform that transforms Data Structures & Algorithms into:
 
-PetalLogic AI makes it:
-✔ Interactive  
-✔ Visual  
-✔ AI-driven  
-✔ Concept-focused  
+- 🧠 AI-generated step-by-step explanations  
+- 📊 Interactive flowchart visualizations  
+- 💬 Conversational AI learning assistant  
+- 📚 Structured topic-based learning system  
+- ⚡ Real-time AI reasoning using local LLM (Ollama Qwen3)
 
 ---
 
-# 🏗 System Overview
+# 🧠 Core Idea
 
-- 🧩 Microservices backend (Spring Boot + Eureka + Gateway)
-- 💬 AI Chat Engine (Ollama Qwen3 local LLM)
-- 🌐 React-based interactive frontend
-- 📊 Flowchart visualization engine (React Flow)
-- 🗄 MySQL database for persistence
+> “Turn every algorithm into a visual, interactive, AI-explained learning experience.”
 
----
-
-# 🌿 Core Idea
-
-> “Every algorithm is like a blooming structure — PetalLogic AI helps you see how it grows step by step.”
+Instead of memorizing DSA:
+✔ You interact with AI  
+✔ You visualize execution  
+✔ You understand logic step-by-step  
 
 ---
 
-# ⚙️ Tech Stack
+# 🏗️ System Architecture (Production Design)
 
-- Spring Boot 3+
-- Spring Cloud Gateway + Eureka
-- React 18
-- Tailwind CSS
-- MySQL
-- Ollama Qwen3
-- React Flow
+```
 
----
+```
+                ┌──────────────────────┐
+                │     React Frontend   │
+                │ Dashboard + Chat UI  │
+                └─────────┬────────────┘
+                          │ REST / WebSocket
+                          ▼
+            ┌─────────────────────────────┐
+            │ Spring Cloud API Gateway   │
+            └────────────┬────────────────┘
+                         │
+ ┌───────────────────────┼────────────────────────┐
+ ▼                       ▼                        ▼
+```
 
-# 🧠 Key Features
+┌──────────────┐   ┌────────────────┐   ┌────────────────────┐
+│ Auth Service │   │ Topic Service  │   │ AI Orchestrator     │
+│ JWT Security │   │ DSA Content    │   │ Prompt Engine       │
+└──────────────┘   └────────────────┘   └─────────┬──────────┘
+▼
+┌──────────────────────┐
+│ Ollama Qwen3 LLM     │
+│ Local AI Engine      │
+└─────────┬────────────┘
+▼
+┌──────────────────────┐
+│ Flow Generator       │
+│ (Graph JSON Engine)  │
+└──────────────────────┘
 
-- AI-powered DSA tutor
-- Step-by-step flowchart generation
-- Chat-based learning interface
-- Topic-wise structured learning system
-- Progress tracking dashboard
-- Microservices architecture
-
----
-
-# 🌸 Vision
-
-To transform algorithm learning from **text-based memorization → visual AI-driven understanding**.
-
----
-
-* 🧰 Prerequisites (software + setup)
-* 🧠 LLM architecture (Ollama Qwen)
-* 🏗 Microservices design
-* 🗄 Database schema (real tables)
-* 🌐 React architecture
-* 🔌 API gateway flow
-* ⚙️ End-to-end system data flow
-
----
-
-# 🏗 PetalLogic AI — System Design
-
-## 🌸 Overview
-
-PetalLogic AI is an AI-powered DSA learning system that combines:
-- Microservices architecture (Spring Boot)
-- Local LLM reasoning (Ollama Qwen3)
-- Interactive React frontend
-- Flowchart-based visualization engine
-- Structured learning + progress tracking
+```
 
 ---
 
-# ⚙️ 1. PREREQUISITES (DEVELOPMENT SETUP)
+# ⚙️ Microservices Architecture
 
-## 🧰 Required Software
+## 1. 🔐 Auth Service
+- JWT authentication
+- User registration/login
+- Role-based access
 
-### 🖥 Backend
+## 2. 📚 Topic Service
+- DSA topics management
+- problem catalog
+- learning structure
+
+## 3. 🤖 AI Orchestrator Service
+- Prompt construction
+- AI response structuring
+- Ollama communication layer
+
+## 4. 📊 Visualization Service
+- Flowchart JSON generator
+- Step-by-step execution mapping
+- Graph builder engine
+
+## 5. 🌐 API Gateway (Spring Cloud)
+- Central routing layer
+- Load balancing
+- Request filtering
+
+---
+
+# 🤖 AI Pipeline
+
+```
+
+User Query
+↓
+Prompt Builder (Spring Boot)
+↓
+Ollama Qwen3 Model
+↓
+Structured JSON Output
+↓
+Flow Generator Service
+↓
+React UI Renderer
+
+```
+
+---
+
+# 🧱 Tech Stack
+
+## Backend
 - Java 17+
 - Spring Boot 3+
-- Maven / Gradle
-- MySQL 8+
-- IntelliJ IDEA
+- Spring Cloud Gateway
+- Eureka Server
+- Spring Security (JWT)
 
-### 🌐 Frontend
-- Node.js 18+
+## AI Layer
+- Ollama (Qwen3 LLM)
+- Prompt Engineering Engine
+- JSON structured AI outputs
+
+## Frontend
 - React 18+
-- Vite
+- React Flow (visualization)
+- Axios (API calls)
 - Tailwind CSS
-- VS Code
 
-### 🧠 AI Layer
-- Ollama installed locally
-- Qwen3 model (recommended)
-```bash
-ollama run qwen:7b
-````
-
-### 🔧 Dev Tools
-
-* Postman (API testing)
-* Docker (optional for microservices)
-* Git + GitHub
-* Redis (optional caching)
+## Database
+- MySQL
+- Redis (future caching layer)
 
 ---
 
-# 🧠 2. AI / LLM ARCHITECTURE
+# 🗄️ Database Design
 
-## 💬 Ollama Qwen3 Flow
+## 👤 User Table
+- id
+- name
+- email
+- password
+- role
 
-User Query → Chat Service → Prompt Engine → Ollama Qwen3 → Structured Response → Frontend Renderer
+## 📚 Topic Table
+- id
+- name
+- difficulty
+- description
 
----
+## 🧠 AI History Table
+- id
+- user_id
+- prompt
+- response_json
+- timestamp
 
-## 🧩 AI Output Structure
-
-All AI responses MUST follow this format:
-
-```json
-{
-  "explanation": "step-by-step reasoning",
-  "code": "optional code snippet",
-  "flowchart": {
-    "nodes": [],
-    "edges": []
-  },
-  "complexity": "O(n)"
-}
-```
-
----
-
-## 🧠 Prompt Engineering Layer
-
-We enforce:
-
-* structured JSON output
-* step-by-step reasoning
-* algorithm decomposition
+## 📊 Progress Table
+- id
+- user_id
+- topic_id
+- completion_status
 
 ---
 
-# 🏗 3. MICROSERVICES ARCHITECTURE
+# 🌟 Key Features
 
-## 🔥 Core Services
+## 🧠 AI Learning Engine
+- Ask any DSA question
+- Get structured AI explanation
+- Step-by-step reasoning
 
-### 1. Auth Service
+## 📊 Flowchart Visualization
+- Algorithm execution visualization
+- Node-based step breakdown
+- Interactive learning flow
 
-* JWT login/register
-* user authentication
+## 💬 AI Chat System
+- Chat-based learning interface
+- Context-aware responses
+- History tracking
 
-### 2. User Service
+## 📚 Topic System
+- Structured DSA roadmap
+- Difficulty-based learning
+- Progress tracking
 
-* profile management
-* progress tracking
-
-### 3. Topic Service
-
-* DSA topics (arrays, trees, DP)
-* content management
-
-### 4. Chat AI Service
-
-* connects to Ollama Qwen3
-* processes prompts
-* returns structured AI response
-
----
-
-## 🌐 API Gateway (Spring Cloud Gateway)
-
-* Single entry point
-* Routes requests to microservices
-* Handles authentication filtering
+## 📈 Dashboard
+- Learning analytics
+- Progress tracking
+- AI interaction history
 
 ---
 
-## 🔍 Service Discovery
+# 🔁 Execution Model (Daily Build System)
 
-* Netflix Eureka Server
-* Registers all microservices
-* Enables dynamic scaling
+👨‍💻 Pavan + 👩‍💻 Kruthika
 
----
-
-# 🗄 4. DATABASE DESIGN (MYSQL)
-
----
-
-## 👤 users
-
-```sql
-id (PK)
-name
-email
-password
-created_at
-```
+Each day:
+- 🧠 Learn system design + AI concepts
+- 🛠 Build backend + frontend together
+- 🔗 Integrate AI + UI + APIs
+- 🧪 Test full feature increment
 
 ---
 
-## 📚 topics
+# 📅 Development Phases
 
-```sql
-id (PK)
-title
-category
-difficulty
-description
-```
+## Phase 1 — Core Infrastructure
+- Microservices setup
+- API Gateway
+- Eureka Server
 
----
+## Phase 2 — Authentication System
+- JWT security
+- Login/register UI
 
-## 📈 user_progress
+## Phase 3 — Topic Engine
+- DSA structure system
+- API + UI integration
 
-```sql
-id (PK)
-user_id (FK)
-topic_id (FK)
-progress_percentage
-last_accessed
-```
+## Phase 4 — AI Engine
+- Ollama integration
+- Prompt engineering system
 
----
+## Phase 5 — Visualization Engine
+- Flowchart generator
+- React Flow integration
 
-## 💬 chat_history
+## Phase 6 — Full System Integration
+- AI + UI + backend sync
+- End-to-end flow
 
-```sql
-id (PK)
-user_id (FK)
-query
-response_json
-timestamp
-```
+## Phase 7 — Production Hardening
+- performance tuning
+- error handling
+- deployment prep
 
 ---
 
-## 🌳 flowcharts
+# 🎯 Final Outcome
 
-```sql
-id (PK)
-topic_id (FK)
-nodes_json
-edges_json
-created_at
-```
-
----
-
-# 🌐 5. REACT FRONTEND ARCHITECTURE
-
-## 📁 Folder Structure
-
-```
-src/
- ├── components/
- ├── pages/
- ├── services/
- ├── hooks/
- ├── context/
- ├── utils/
-```
+✔ AI-powered DSA tutor  
+✔ Microservices backend system  
+✔ React-based intelligent UI  
+✔ Local LLM integration (Ollama Qwen3)  
+✔ Flowchart-based learning engine  
+✔ Production-ready architecture  
 
 ---
 
-## 🧩 Core Pages
+# ⚡ Vision
 
-* Login / Register
-* Dashboard
-* Topic Explorer
-* AI Chat Interface
-* Flowchart Viewer
+> “Make DSA learning as intuitive as watching a live system execution.”
 
 ---
 
-## 💬 AI Chat UI Flow
+# 🚀 Status
 
-User Input → API Call → Chat Service → Ollama → Response → Render UI + Flowchart
-
----
-
-# 🔌 6. API FLOW ARCHITECTURE
-
-## Example Flow
-
-### User asks:
-
-> "Explain Binary Search"
-
-### System flow:
-
-1. React → Gateway
-2. Gateway → Chat Service
-3. Chat Service → Prompt Engine
-4. Prompt → Ollama Qwen3
-5. Response → JSON structured output
-6. Frontend renders:
-
-   * explanation
-   * code
-   * flowchart
+> 🟢 Active Development (30-Day Build Sprint)
 
 ---
 
-# 🧠 7. FLOWCHART ENGINE
+# 🤝 Contributors (Shared Engineering Model)
 
-## Tech
+👨‍💻 Pavan Kalyan — Full Stack + AI + System Design + Integration  
+👩‍💻 Kruthika — Full Stack + AI + System Design + Integration  
 
-* React Flow
+## ⚠️ STRICT RULE
 
-## Structure
+Both contributors will actively work across:
 
-```json
-{
-  "nodes": [
-    { "id": "1", "data": "Start" },
-    { "id": "2", "data": "Check mid" }
-  ],
-  "edges": [
-    { "from": "1", "to": "2" }
-  ]
-}
-```
+- 🧠 Backend (Spring Boot Microservices)
+- 🌐 Frontend (React + UI/UX)
+- 🤖 AI Layer (Ollama + Prompt Engineering)
+- 🔌 Integration (API + End-to-End Flow)
+- 🧱 System Design (Architecture + Data Flow)
+- 🧪 Testing & Debugging
 
 ---
 
-# ⚡ 8. SYSTEM GOALS
+## 🔁 WORKING PRINCIPLE
 
-✔ AI-driven learning
-✔ Visual understanding of DSA
-✔ Structured explanations
-✔ Real-time interaction
-✔ Scalable microservices
+> “No fixed roles. Only shared ownership of the entire system.”
+
+Every feature must be:
+- Designed together
+- Built together (pair execution)
+- Debugged together
+- Integrated together
 
 ---
 
-# 🌸 9. CORE PRINCIPLE
+## 🎯 EXPECTED OUTCOME
 
-> “Understanding algorithms is not memorization — it is visualization of logic flow.”
+Both contributors will:
+✔ Understand full system architecture  
+✔ Write backend and frontend code  
+✔ Build AI integration logic  
+✔ Handle system design decisions  
+✔ Debug full-stack issues independently  
 
+---
 
 ---
