@@ -81,9 +81,6 @@ To transform algorithm learning from **text-based memorization → visual AI-dri
 
 ---
 
-# 🏗 PetalLogic AI — SYSTEM DESIGN DOCUMENT
-
-````md id="petallogic_system_design"
 # 🏗 PetalLogic AI — System Design
 
 ## 🌸 Overview
