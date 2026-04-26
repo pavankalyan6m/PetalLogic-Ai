@@ -362,9 +362,6 @@ User Input → API Call → Chat Service → Ollama → Response → Render UI +
 
 > “Understanding algorithms is not memorization — it is visualization of logic flow.”
 
----
-
-```
 
 ---
 
@@ -407,4 +404,3 @@ If you want to go serious production-level next, I can build:
 - full system testing plan
 
 Just say 👍
-```
